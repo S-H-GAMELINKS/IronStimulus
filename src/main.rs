@@ -11,7 +11,7 @@ use std::env;
 fn get_server_port() -> u16 {
     env::var("PORT").ok()
         .and_then(|p| p.parse().ok())
-        .unwarp_or(3000)
+        .unwrap_or(3000)
 }
 
 fn main() {
@@ -21,5 +21,5 @@ fn main() {
 
     mount.mount("/index.js", Static::new(Path::new("static/index.js")));
 
-    Iron::new(mount).http(("0.0.0.0", get_server_port())).unwarp();
+    Iron::new(mount).http(("0.0.0.0", get_server_port())).unwrap();
 }
