@@ -2,3 +2,4 @@
 /target
 **/*.rs.bk
 /static/index.js
+/static/node_modules
